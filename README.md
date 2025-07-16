@@ -1,3 +1,7 @@
+[![CI](https://github.com/gborough/memfd/actions/workflows/ci.yml/badge.svg)](https://github.com/gborough/memfd/actions/workflows/ci.yml)
+
+[Documentation](https://gborough.github.io/memfd/memfd)
+
 # Memfd
 Create and manage Linux Memory Mapped Files
 

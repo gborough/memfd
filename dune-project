@@ -22,7 +22,8 @@
   "A library to create and manage the Linux Memory Mapped Files(memfd). Supports Linux kernel version >= 3.17")
  (depends
   (ocaml
-   (>= 4.08.0)))
+   (>= 4.08.0))
+  (ppx_expect :with-test))
  (tags
   (linux memfd)))
 

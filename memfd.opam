@@ -13,6 +13,7 @@ bug-reports: "https://github.com/gborough/memfd/issues"
 depends: [
   "dune" {>= "2.7"}
   "ocaml" {>= "4.08.0"}
+  "ppx_expect" {with-test}
   "odoc" {with-doc}
 ]
 build: [

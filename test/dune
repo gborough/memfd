@@ -1,0 +1,8 @@
+(library
+ (name test_memfd)
+ (enabled_if
+  (= %{system} "linux"))
+ (libraries memfd unix)
+ (inline_tests)
+ (preprocess
+  (pps ppx_expect)))

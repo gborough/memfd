@@ -1,0 +1,8 @@
+(library
+ (public_name memfd)
+ (name memfd)
+ (enabled_if
+  (= %{system} "linux"))
+ (foreign_stubs
+  (language c)
+  (names memfd_stubs)))

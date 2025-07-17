@@ -53,7 +53,47 @@ CAMLprim value caml_memfd_create(value v_name, value v_allow_sealing, value v_cl
     if (enable_huge_tlb)
     {
         flags |= MFD_HUGETLB;
-        flags |= huge_tlb_flag;
+        switch (huge_tlb_flag)
+        {
+        case 1:
+            flags |= MFD_HUGE_64KB;
+            break;
+        case 2:
+            flags |= MFD_HUGE_512KB;
+            break;
+        case 3:
+            flags |= MFD_HUGE_1MB;
+            break;
+        case 4:
+            flags |= MFD_HUGE_2MB;
+            break;
+        case 5:
+            flags |= MFD_HUGE_8MB;
+            break;
+        case 6:
+            flags |= MFD_HUGE_16MB;
+            break;
+        case 7:
+            flags |= MFD_HUGE_32MB;
+            break;
+        case 8:
+            flags |= MFD_HUGE_256MB;
+            break;
+        case 9:
+            flags |= MFD_HUGE_512MB;
+            break;
+        case 10:
+            flags |= MFD_HUGE_1GB;
+            break;
+        case 11:
+            flags |= MFD_HUGE_2GB;
+            break;
+        case 12:
+            flags |= MFD_HUGE_16GB;
+            break;
+        default:
+            break;
+        }
     }
 
     int fd = memfd_create(name, flags);

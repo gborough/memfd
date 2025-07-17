@@ -36,18 +36,18 @@ type memfd_err =
   | Get_seal
 
 let int_of_huge_tlb_flag = function
-  | Huge_TLB_64KB -> 1073741824
-  | Huge_TLB_512KB -> 1275068416
-  | Huge_TLB_1MB -> 1342177280
-  | Huge_TLB_2MB -> 1409286144
-  | Huge_TLB_8MB -> 1543503872
-  | Huge_TLB_16MB -> 1610612736
-  | Huge_TLB_32MB -> 1677721600
-  | Huge_TLB_256MB -> 1879048192
-  | Huge_TLB_512MB -> 1946157056
-  | Huge_TLB_1GB -> 2013265920
-  | Huge_TLB_2GB -> 2080374784
-  | Huge_TLB_16GB -> 2281701376
+  | Huge_TLB_64KB -> 1
+  | Huge_TLB_512KB -> 2
+  | Huge_TLB_1MB -> 3
+  | Huge_TLB_2MB -> 4
+  | Huge_TLB_8MB -> 5
+  | Huge_TLB_16MB -> 6
+  | Huge_TLB_32MB -> 7
+  | Huge_TLB_256MB -> 8
+  | Huge_TLB_512MB -> 9
+  | Huge_TLB_1GB -> 10
+  | Huge_TLB_2GB -> 11
+  | Huge_TLB_16GB -> 12
 
 let int_of_seal_flag = function
   | Seal_seal -> 1

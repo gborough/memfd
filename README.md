@@ -14,3 +14,6 @@ This library manages the call to Linux memfd_create(), including kernel version 
 ## Unix.file_descr and memfd
 
 This library is unopinionated about the conversion between Unix.file_descr and memfd, therefore no such function is exposed. You can check out this line in the test for reference: https://github.com/gborough/memfd/blob/b3a615924aff705798d7c6e4e33f48cf51fa64a8/test/test_memfd.ml#L11
+
+## CAVEAT
+To use this library on Alpine Linux/musl, make sure to install related packages that include memfd.h

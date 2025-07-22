@@ -1,4 +1,11 @@
 #define _GNU_SOURCE
+
+#ifdef __s390x__
+#define IS_S390X 1
+#else
+#define IS_S390X 0
+#endif
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdbool.h>
@@ -28,6 +35,7 @@ CAMLprim value caml_memfd_create(value v_name, value v_allow_sealing, value v_cl
     }
 
     unsigned int flags = 0;
+    int is_s390x = IS_S390X;
 
     CAMLparam5(v_name, v_allow_sealing, v_cloexec, v_enable_huge_tlb, v_huge_tlb_flag);
     const char *name = String_val(v_name);
@@ -35,6 +43,11 @@ CAMLprim value caml_memfd_create(value v_name, value v_allow_sealing, value v_cl
     bool cloexec = Bool_val(v_cloexec);
     bool enable_huge_tlb = Bool_val(v_enable_huge_tlb);
     unsigned int huge_tlb_flag = Int_val(v_huge_tlb_flag);
+
+    if (is_s390x)
+    {
+        enable_huge_tlb = false;
+    }
 
     if (enable_huge_tlb && major <= 4 && minor < 14)
     {

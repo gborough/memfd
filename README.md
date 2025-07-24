@@ -18,3 +18,15 @@ This library is unopinionated about the conversion between Unix.file_descr and m
 ## CAVEAT
 - To use this library on Alpine Linux/musl, make sure to install related packages that include memfd.h
 - Using huge page on s390x target is currently a no-op(https://lists.gnu.org/archive/html/qemu-s390x/2022-08/msg00176.html)
+
+## License
+
+This project is licensed under the [MIT license].
+
+[MIT license]: https://github.com/gborough/memfd/blob/main/LICENSE
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in memfd by you, shall be licensed as MIT, without any additional
+terms or conditions.
